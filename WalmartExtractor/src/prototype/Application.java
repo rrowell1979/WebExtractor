@@ -9,7 +9,7 @@ public class Application {
 		//Connect to Database
 		try{
 			// 1. Get a connection to database
-			Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/webextractor", "root", "persius1979");
+			Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/webextractor", "username", "password");
 			// 2. Create a statment
 			Statement myStmt = myConn.createStatement();
 			// 3. Execue SQL query
