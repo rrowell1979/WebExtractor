@@ -1,8 +1,9 @@
 package prototype;
-/**
- * Hello world!
- *
- */
+
+//Russell Rowell, Robert White, Karan Singh, Kevin Wu
+//CSIS 2450
+//Web Extractor
+
 public class App 
 {
     public static void main( String[] args )
