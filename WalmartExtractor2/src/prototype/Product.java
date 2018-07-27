@@ -1,5 +1,8 @@
 package prototype;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class Product 
 {
 	private String title;
@@ -8,6 +11,7 @@ public class Product
 	private String id;
 	private String retailer;
 	private String tld;
+	private Date timestamp;
 	
 	public Product(String id, String retailer, String tld, String title, Double price, String description) 
 	{
@@ -17,6 +21,15 @@ public class Product
 		this.title = title;
 		this.price = price;
 		this.description = description;
+		this.timestamp = Calendar.getInstance().getTime();
+	}
+
+	public Date getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
 	}
 
 	public String getTitle() {

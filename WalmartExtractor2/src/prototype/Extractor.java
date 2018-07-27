@@ -1,7 +1,8 @@
 package prototype;
 
 import java.io.File;
-
+import java.util.Calendar;
+import java.util.Date;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -55,7 +56,7 @@ public class Extractor {
 		for(String id: ids)
 		{
 			url = "https://www.walmart.com/ip/" + id;
-			product = new Product(id, retailer, tld, null, null, null);
+//			product = new Product(id, retailer, tld, null, null, null);
 			driver.navigate().to(url);;
 			title = driver.findElement(By.xpath("//div[@class='ProductTitle']/h1")).getAttribute("content");
 			price = driver.findElement(By.xpath("//div[@class='prod-PriceHero']/span/span/span/span[@itemprop='price']")).getAttribute("content");
@@ -67,10 +68,10 @@ public class Extractor {
 			System.out.println();
 			System.out.println();
 			
-			product.setDescription(description);
-			product.setPrice(Double.parseDouble(price));
-			product.setTitle(title);
-			productArray[counter] = product;
+//			product.setDescription(description);
+//			product.setPrice(Double.parseDouble(price));
+//			product.setTitle(title);
+			productArray[counter] = new Product(id, store, tld, title, Double.parseDouble(price), description);
 			
 			counter++;
 			
