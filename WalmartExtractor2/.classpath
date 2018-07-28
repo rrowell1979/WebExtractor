@@ -14,5 +14,6 @@
 	<classpathentry kind="lib" path="C:/Users/rober/git/WebExtractor/WalmartExtractor2/src/selenium-java-3.13.0/libs/httpcore-4.4.9.jar"/>
 	<classpathentry kind="lib" path="C:/Users/rober/git/WebExtractor/WalmartExtractor2/src/selenium-java-3.13.0/libs/okhttp-3.10.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/rober/git/WebExtractor/WalmartExtractor2/src/selenium-java-3.13.0/libs/okio-1.14.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/rober/git/WebExtractor/WalmartExtractor2/src/mysql-connector-java-8.0.11.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
