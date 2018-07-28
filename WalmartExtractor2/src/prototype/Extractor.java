@@ -23,14 +23,15 @@ public class Extractor {
 			String title = driver.findElement(By.xpath("//div[@class='ProductTitle']/h1")).getAttribute("content");
 			String price = driver.findElement(By.xpath("//div[@class='prod-PriceHero']/span/span/span/span[@itemprop='price']")).getAttribute("content");
 			String description = driver.findElement(By.xpath("//div[@class='about-desc']")).getText();getClass();
+			String trimmed = description.replaceAll("\"", "");
 			String store = retailer;
 			System.out.println("Title: " + title);
 			System.out.println("Price: " + price);
-			System.out.println("Description: " + description);
+			System.out.println("Description: " + trimmed);
 			System.out.println();
 			System.out.println();
 			
-			product.setDescription(description);
+			product.setDescription(trimmed);
 			product.setPrice(Double.parseDouble(price));
 			product.setTitle(title);
 
@@ -62,17 +63,18 @@ public class Extractor {
 			title = driver.findElement(By.xpath("//div[@class='ProductTitle']/h1")).getAttribute("content");
 			price = driver.findElement(By.xpath("//div[@class='prod-PriceHero']/span/span/span/span[@itemprop='price']")).getAttribute("content");
 			description = driver.findElement(By.xpath("//div[@class='about-desc']")).getText();getClass();
+			String trimmed = description.replaceAll("\"", "");
 			store = retailer;
 			System.out.println("Title: " + title);
 			System.out.println("Price: " + price);
-			System.out.println("Description: " + description);
+			System.out.println("Description: " + trimmed);
 			System.out.println();
 			System.out.println();
 			
 //			product.setDescription(description);
 //			product.setPrice(Double.parseDouble(price));
 //			product.setTitle(title);
-			productArray[counter] = new Product(id, store, tld, title, Double.parseDouble(price), description);
+			productArray[counter] = new Product(id, store, tld, title, Double.parseDouble(price), trimmed);
 			
 			counter++;
 			
