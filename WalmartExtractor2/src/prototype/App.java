@@ -14,15 +14,27 @@ public class App
 {
     public static void main( String[] args )
     {
-	    DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	    Calendar today = Calendar.getInstance();
-	    today.add(Calendar.HOUR_OF_DAY, 0);
-	    Date scheduledTime = today.getTime();
-
-	    Timer timer = new Timer();
-
- 	  	int period = 180000;//3 minutes
-//	    int period = 15000;
-	    timer.schedule(new Scheduler(), scheduledTime, period );
+    	
+    	//**********Scheduler************************************
+//	    DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//	    Calendar today = Calendar.getInstance();
+//	    Date scheduledTime = today.getTime();
+//
+//	    Timer timer = new Timer();
+//
+// 	  	int period = 180000;//3 minutes
+//	    timer.schedule(new Scheduler(), scheduledTime, period );
+	    //************Scheduler*********************************
+    	
+    	Database db = new Database();
+    	Product product;
+    	Extractor ext = new Extractor();
+        product = ext.parseProductAttributes("54594234","walmart","com");
+    	try {
+			db.insertData(product);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 }
