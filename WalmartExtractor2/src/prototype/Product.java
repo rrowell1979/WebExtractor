@@ -11,7 +11,7 @@ public class Product
 	private String id;
 	private String retailer;
 	private String tld;
-	private Date timestamp;
+	private String timestamp;
 	
 	public Product(String id, String retailer, String tld, String title, Double price, String description) 
 	{
@@ -21,14 +21,19 @@ public class Product
 		this.title = title;
 		this.price = price;
 		this.description = description;
-		this.timestamp = Calendar.getInstance().getTime();
+		Date date = Calendar.getInstance().getTime();
+		java.text.SimpleDateFormat sdf = 
+			     new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+			String currentTime = sdf.format(date);
+		this.timestamp = currentTime;
 	}
 
-	public Date getTimestamp() {
+	public String getTimestamp() {
 		return timestamp;
 	}
 
-	public void setTimestamp(Date timestamp) {
+	public void setTimestamp(String timestamp) {
 		this.timestamp = timestamp;
 	}
 
