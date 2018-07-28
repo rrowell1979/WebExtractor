@@ -11,24 +11,16 @@ public class Scheduler extends TimerTask{
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-		
+		Extractor ext = new Extractor();
+        Product product;
+        product = ext.parseProductAttributes("54594234","walmart","com");
+        Product[] productArray;
+        String[] ids = new String[3];
+        ids[0] = "14869676";
+        ids[1] = "26832646";
+        ids[2] = "952592653";
+        productArray = ext.parseProductAttributes(ids, "walmart", "com");
+        System.out.println("Finished");
 	}
-	public static void main(String[] args) {
 
-	    //the Date and time at which you want to execute
-	    DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	    Calendar today = Calendar.getInstance();
-//	    Date date = new Date(today.set(Calendar.HOUR_OF_DAY, value);, month, date, hrs, min)
-
-	    //Now create the time and schedule it
-	    Timer timer = new Timer();
-
-	    //Use this if you want to execute it once
-//	    timer.schedule(new Scheduler(), date);
-
-	    //Use this if you want to execute it repeatedly
-	    //int period = 10000;//10secs
-	    //timer.schedule(new MyTimeTask(), date, period );
-	}
 }

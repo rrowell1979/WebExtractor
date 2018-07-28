@@ -1,5 +1,11 @@
 package prototype;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Timer;
+
 //Russell Rowell, Robert White, Karan Singh, Kevin Wu
 //CSIS 2450
 //Web Extractor
@@ -8,15 +14,15 @@ public class App
 {
     public static void main( String[] args )
     {
-        Extractor ext = new Extractor();
-        Product product;
-        product = ext.parseProductAttributes("54594234","walmart","com");
-        Product[] productArray;
-        String[] ids = new String[3];
-        ids[0] = "14869676";
-        ids[1] = "26832646";
-        ids[2] = "952592653";
-        productArray = ext.parseProductAttributes(ids, "walmart", "com");
-        System.out.println("Finished");
+	    DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	    Calendar today = Calendar.getInstance();
+	    today.add(Calendar.HOUR_OF_DAY, 0);
+	    Date scheduledTime = today.getTime();
+
+	    Timer timer = new Timer();
+
+ 	  	int period = 180000;//3 minutes
+//	    int period = 15000;
+	    timer.schedule(new Scheduler(), scheduledTime, period );
     }
 }
